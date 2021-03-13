@@ -8,3 +8,21 @@ html {
     width: 75%;
     margin: 2rem auto;
 }
+
+form{
+    position: relative;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    background-color: #eee;
+    padding: 10px;
+}
+form label{
+    position: absolute;
+    left: 5px;
+}
+form input{
+    position: absolute;
+    right: 5px;
+}

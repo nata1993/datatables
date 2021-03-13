@@ -8,7 +8,72 @@
     <title>Document</title>
 </head>
 <body>
-    HELLO!
+    <%  if(data.length > 0) { %>
+    <div class="container">
+        <div class="table-container">
+            <div class="form">
+                <form action="addData" method="POST">
+                    <label>Name:</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label>Position:</label>
+                    <input type="text" id="position" name="position"><br>
+                    <label>Office:</label>
+                    <input type="text" id="office" name="office"><br>
+                    <label>Extn. :</label>
+                    <input type="text" id="extn" name="extn"><br>
+                    <label>Start date:</label>
+                    <input type="text" id="startDate" name="startDate"><br>
+                    <label>Salary:</label>
+                    <input type="text" id="salary" name="salary"><br>
+                    <input type="submit" style="left: 44.25%; width: 147px; "><br>
+                </form>
+            </div>
+            <hr>
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < data.length; i++) { %>
+                        <tr>
+                            <td><%= data[i].name %></td>
+                            <td><%= data[i].position %></td>
+                            <td><%= data[i].office %></td>
+                            <td><%= data[i].extn %></td>
+                            <td><%= data[i].startDate %></td>
+                            <td><%= data[i].salary %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <% } else { %>
+        Add data!
+        <form action="addData" method="POST">
+            Name:
+            <input type="text" id="name" name="name"><br>
+            Position:
+            <input type="text" id="position" name="position"><br>
+            Office:
+            <input type="text" id="office" name="office"><br>
+            Extn. :
+            <input type="text" id="extn" name="extn"><br>
+            Start date:
+            <input type="text" id="startDate" name="startDate"><br>
+            Salary:
+            <input type="text" id="salary" name="salary"><br>
+            <input type="submit"><br>
+        </form>
+    <% } %>
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="app/main.js"></script>
